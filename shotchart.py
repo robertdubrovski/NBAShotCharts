@@ -66,7 +66,9 @@ class Chart:
                             "seasonsegment": seasonsegment
                         }
 
-        self.response = requests.get(self.base_url, params=self.parameters)
+        self.headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.10; rv:39.0) Gecko/20100101 Firefox/39.0'}
+        self.response = requests.get(self.base_url, params=self.parameters,
+                headers=self.headers)
 
     def get_data(self):
         data = self.response.json()['resultSets'][0]['rowSet']
