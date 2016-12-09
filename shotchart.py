@@ -23,7 +23,7 @@ class Chart:
                  opponentteamid=0, contextfilter="", rangetype="", month=0,
                  aheadbehind="", vsdivision="", pointdiff="", gameid="",
                  rookieyear="", gamesegment="", clutchtime="", startrange="",
-                 endperiod="", seasonsegment=""):
+                 endperiod="", seasonsegment="", playerposition=""):
 
         self.playername = playername.lower()
 
@@ -33,38 +33,39 @@ class Chart:
         self.base_url = "http://stats.nba.com/stats/shotchartdetail?"
 
         self.parameters = {
-                            "playerid": get_player_id(playername),
-                            "season": season,
-                            "period": period,
-                            "vsconference": vsconference,
-                            "seasontype": seasontype,
-                            "leagueid": leagueid,
-                            "lastngames": lastngames,
-                            "teamid": teamid,
-                            "position": position,
-                            "location": location,
-                            "outcome": outcome,
-                            "datefrom": datefrom,
-                            "contextmeasure": contextmeasure,
-                            "startperiod": startperiod,
-                            "dateto": dateto,
-                            "endrange": endrange,
-                            "opponentteamid": opponentteamid,
-                            "contextfilter": contextfilter,
-                            "rangetype": rangetype,
-                            "month": month,
-                            "aheadbehind": aheadbehind,
-                            "endrange": endrange,
-                            "vsdivision": vsdivision,
-                            "pointdiff": pointdiff,
-                            "rookieyear": rookieyear,
-                            "gamesegment": gamesegment,
-                            "startrange": startrange,
-                            "clutchtime": clutchtime,
-                            "gameid": gameid,
-                            "endperiod": endperiod,
-                            "seasonsegment": seasonsegment
-                        }
+            "playerid": get_player_id(playername),
+            "Season": season,
+            "period": period,
+            "vsconference": vsconference,
+            "seasontype": seasontype,
+            "leagueid": leagueid,
+            "lastngames": lastngames,
+            "teamid": teamid,
+            "position": position,
+            "location": location,
+            "outcome": outcome,
+            "datefrom": datefrom,
+            "contextmeasure": contextmeasure,
+            "startperiod": startperiod,
+            "dateto": dateto,
+            "endrange": endrange,
+            "opponentteamid": opponentteamid,
+            "contextfilter": contextfilter,
+            "rangetype": rangetype,
+            "month": month,
+            "aheadbehind": aheadbehind,
+            "endrange": endrange,
+            "vsdivision": vsdivision,
+            "pointdiff": pointdiff,
+            "rookieyear": rookieyear,
+            "gamesegment": gamesegment,
+            "startrange": startrange,
+            "clutchtime": clutchtime,
+            "gameid": gameid,
+            "endperiod": endperiod,
+            "seasonsegment": seasonsegment,
+            "PlayerPosition": playerposition
+        }
 
         self.headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.10; rv:39.0) Gecko/20100101 Firefox/39.0'}
         self.response = requests.get(self.base_url, params=self.parameters,
